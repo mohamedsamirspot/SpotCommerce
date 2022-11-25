@@ -1,0 +1,82 @@
+﻿@model SpotCommerce.Models.ViewModels.ItemViewModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<br />
+<h2 class="text-info">Delete Menu Item</h2>
+<br />
+<form method="post">
+    <div class="backgroundWhiteBorder row">
+        <div class="col-8">
+            <input type="hidden" asp-for="Item.Id" />
+            <fieldset disabled>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Item.Name" class="custom-label"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Item.Name" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Item.Description" class="custom-label"></label>
+                    </div>
+                    <div class="col-8">
+                        @Html.TextAreaFor(m => m.Item.Description)
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Item.Price" class="custom-label"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Item.Price" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Item.CategoryId" class="custom-label"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Item.Category.Name" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Item.SubCategoryId" class="custom-label"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Item.SubCategory.Name" class="form-control" />
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-3">
+            <img src="@Model.Item.Image" width="100%" style="border-radius:5px;border:1px solid #bbb9b9;" />
+        </div>
+        <div class="col-8">
+            <div class="col-8 offset-4">
+                <partial name="_DeleteAndBackToListButton" model="Model.Item.Id" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    <script>
+            tinymce.init({
+                selector: 'textarea',
+                plugins: "lists",
+                toolbar: "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist",
+                menubar: 'file edit format',
+                readonly: 1
+            });</script>
+    <script>tinymce.init({ selector: 'textarea' });</script>
+
+}
