@@ -7,3 +7,4 @@ Simulate everything that can happen within an e-commerce app
 - The processing of collecting and preparing the order by the operator role
 - The ability of the app customer role to add products to the cart or to the wishlist and follow up on the purchase and payment process via the smart card.
 - The ability of the frontdesk role to display the ready for pickup orders and deliver them to the customer directly or give them to a delivery company if ex
+<img width="960" alt="Screenshot 2023-05-15 142549" src="https://github.com/mohamedsamirspot/SpotCommerce/assets/71722372/00858eb8-62f5-4200-9d63-3e006a15f197">
